@@ -53,10 +53,25 @@ void CalculateTreeCoordinates(int numTrees, vector<int>& columnValuePerRow, int 
     
 }
 
+void PrintTreeCoordinates(int numTrees, vector<int> columnValuePerRow)
+{
+    for (int row = 0; row < numTrees; ++row)
+    {
+        for (int col = 0; col < numTrees; ++col)
+        {
+            if (columnValuePerRow[row] == col) cout << " O ";
+            else cout << " - ";
+        }
+        cout << endl;
+    }
+
+}
+
 int main() {
-    const int numTrees = 4;
+    const int numTrees = 9;
     vector<int> columnValuePerRow(numTrees, -1);
 
     CalculateTreeCoordinates(numTrees, columnValuePerRow);
+    PrintTreeCoordinates(numTrees, columnValuePerRow);
     return 0;
 }
